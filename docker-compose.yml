@@ -1,0 +1,25 @@
+version: '3.7'
+services:
+  phpmyadmin:
+    image: 'phpmyadmin/phpmyadmin:latest'
+    container_name: mysql-phpmyadmin
+    restart: unless-stopped
+    environment:
+      - PMA_HOST=public-mariadb
+      - PMA_USER=root
+      - PMA_PASSWORD=j
+    ports:
+      - '8080:80'
+  db:
+    image: mariadb
+    container_name: public-mariadb
+    restart: unless-stopped
+    volumes:
+      - './docker-compose/mysql:/docker-entrypoint-initdb.d'
+      - './docker-compose/dbdata:/var/lib/mysql'
+    ports:
+      - '3306:3306'
+    environment:
+      - MARIADB_ROOT_PASSWORD=j
+      - MARIADB_USER=maria
+      - MARIADB_PASSWORD=my_cool_secret
