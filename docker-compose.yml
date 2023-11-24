@@ -6,12 +6,10 @@ services:
     restart: unless-stopped
     environment:
       - PMA_HOST=public-mariadb
-      - PMA_USER=root
-      - PMA_PASSWORD=j
       - TZ=Asia/Dhaka
       - UPLOAD_LIMIT=900M
     ports:
-      - '8080:80'
+      - '8085:80'
   db:
     image: mariadb
     container_name: public-mariadb
@@ -22,7 +20,7 @@ services:
     ports:
       - '3306:3306'
     environment:
-      - MARIADB_ROOT_PASSWORD=j
+      - MARIADB_ROOT_PASSWORD=MairaFala
       - MARIADB_USER=maria
-      - MARIADB_PASSWORD=my_cool_secret
+      - MARIADB_PASSWORD=MairaFala
       - TZ=Asia/Dhaka

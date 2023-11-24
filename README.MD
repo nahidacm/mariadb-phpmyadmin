@@ -11,13 +11,13 @@ Tag: Apple M1 chip compatible MySql
 
 ## Access phpMyAdmin
 
-http://localhost:8080
+http://localhost:8085
 
 User: `root`
 
-Password: `j`
+Password: `MairaFala`
 
 ## Access mysql DB server
 
-`mysql -h 127.0.0.1 -P 4406 -u root -pj`
+`mysql -h 127.0.0.1 -P 3306 -u root -pMairaFala`
 
